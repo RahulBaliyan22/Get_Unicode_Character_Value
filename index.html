@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Unicode Character Value</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        input, button {
+            padding: 10px;
+            margin: 10px;
+        }
+        #result {
+            font-size: 24px;
+            color: blue;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Get Unicode Character Value</h1>
+    <p>Enter a character to get its Unicode code point:</p>
+
+    <input type="text" id="charInput" maxlength="1" placeholder="Enter a character">
+    <button onclick="getUnicodeValue()">Get Unicode Value</button>
+
+    <div id="result"></div>
+
+    <script>
+        function getUnicodeValue() {
+            const charInput = document.getElementById('charInput').value;
+
+            // Get the code point of the character
+            const codePoint = charInput.codePointAt(0); // Get code point in hex format
+
+            // Display the result
+            document.getElementById('result').innerText = `Unicode code point of '${charInput}' is U+${codePoint}`;
+        }
+    </script>
+
+</body>
+</html>
